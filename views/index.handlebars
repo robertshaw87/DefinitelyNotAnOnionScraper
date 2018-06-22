@@ -3,7 +3,8 @@
     <h1 class="display-4">Definitely Not an Onion Scraper</h1>
     <p class="lead">Scrape links to real news articles linked by reddit. Add articles to your favorites to track and add notes.</p>
     <div>
-      <button class="btn btn-outline-dark m-3" id="rescrape-button">Rescrape</button><button class="btn btn-outline-dark m-3" id="saved-articles-button">Saved Articles</button>
+      <a href="/api/scrape"><button class="btn btn-outline-dark m-3" id="rescrape-button">Rescrape</button></a>
+      <a href="/saved"><button class="btn btn-outline-dark m-3" id="saved-articles-button">Saved Articles</button></a>
     </div>
   </div>
 </div>
@@ -11,4 +12,23 @@
   {{#each data}}
     {{> article}}
   {{/each}}
+</div>
+<div class="modal fade" id="noteModal" tabindex="-1" role="dialog" aria-labelledby="noteModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="noteModalLongTitle"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">
+                ...
+            </div>
+            <div class="modal-footer">
+                {{!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> --}}
+                <button type="button" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
 </div>

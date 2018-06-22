@@ -24,7 +24,9 @@ router.get("/", function (req, res) {
 });
 
 router.get("/saved", function (req, res){
+  console.log("banana")
   db.Article.find({saved: true}).populate("note").then(function (data) {
+    console.log(data)
     res.render("index", {data: data});
   }).catch(function(err) {
     res.json(err)

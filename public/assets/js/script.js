@@ -1,13 +1,5 @@
 $(function () {
 
-  $(document).on("click", "#rescrape-button", function(event) {
-    $.get("/api/scrape");
-  })
-
-  $(document).on("click", "#saved-articles-button", function(event) {
-    $.get("/saved");
-  })
-
   $(document).on("click", ".save-toggle", function(event) {
     console.log($(this).data("id"))
     console.log(!$(this).data("saved"))
@@ -16,5 +8,7 @@ $(function () {
       window.location.reload();
     })
   })
+
+  
 
 })
