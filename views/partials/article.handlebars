@@ -1,3 +1,25 @@
-  <h3>{{title}}</h3>
-  <p>{{link}}</p>
-  <img src={{img}}>
+<div class="card mb-3">
+  <div class="card-body">
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-outline-dark float-right ml-3" data-id="{{_id}}">
+          {{#if saved}}
+            <i class="fas fa-heart" style="color:red"></i>
+          {{else}}
+            <i class="far fa-heart"></i>
+          {{/if}}
+        </button>
+        {{#if saved}}
+          <button class="btn btn-outline-dark float-right ml-3"
+            data-id="{{_id}}" 
+            data-title="{{note.title}}"
+            data-body="{{note.body}}"
+            <i class="far fa-sticky-note"></i>
+          </button>
+        {{/if}}
+        <img src={{img}} alt="{{title}}" class="float-left mr-3" style="width:80px">
+        <h5 class="card-title"><a href="{{link}}" class="card-link">{{title}}</a></h5>
+      </div>
+    </div>
+  </div>
+</div>
