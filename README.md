@@ -5,7 +5,7 @@ Scrapes and saves news articles from reddit. You can mark them as favorites and 
 
 ## Getting Started
 
-Open up the [project link](https://peaceful-dusk-98568.herokuapp.com/) and you should be able to see the webpage shown below:
+Open up the [project link](https://not-an-onion-scraper.herokuapp.com/) and you should be able to see the webpage shown below:
 
 ![Scraper](public/assets/images/readme.gif "Scraper")
 
