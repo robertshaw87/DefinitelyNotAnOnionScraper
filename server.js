@@ -3,9 +3,6 @@ const bodyParser = require("body-parser");
 
 const exphbs = require("express-handlebars");
 
-// Require all models
-const db = require("./models");
-
 const PORT = process.env.PORT || 8080;
 
 const app = express();

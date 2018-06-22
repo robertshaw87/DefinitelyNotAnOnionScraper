@@ -12,6 +12,14 @@ const ArticleSchema = new Schema({
     unique: true,
     required: true
   },
+  img: {
+    type: String,
+    default: "public/assets/images/placeholder.jpg"
+  },
+  saved: {
+    type: Boolean,
+    default: false
+  },
   note: {
     type: Schema.Types.ObjectId,
     ref: "Note"
