@@ -65,18 +65,16 @@ router.post("/api/save/:id", function (req, res) {
 });
 
 router.post("/api/note/:id", function (req, res) {
-  var newNote = {
-    title: req.body.title,
-    body: req.body.body
-  }
-  db.Note.findOneAndUpdate(
-    {_id: req.params.id},
-    newNote
-  ).then(function(data) {
-    res.json(data);
-  }).catch(function(err) {
-    res.json(err);
-  })
+  db.Note.create(req.body)
+    .then(function(dbNote) {
+      return db.Article.findOneAndUpdate({ _id: req.params.id }, { note: dbNote._id }, { new: true });
+    })
+    .then(function(dbArticle) {
+      res.json(dbArticle);
+    })
+    .catch(function(err) {
+      res.json(err);
+    });
 });
 
 module.exports = router;

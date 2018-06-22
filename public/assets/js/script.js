@@ -15,7 +15,7 @@ $(function () {
     var noteID = $(this).data("noteid");
     var noteTitle = $(this).data("title");
     var noteBody = $(this).data("body");
-    $("#note-itle").val(noteTitle);
+    $("#note-title").val(noteTitle);
     $("#note-body").val(noteBody);
     $("#note-save").data("id", articleID);
   });
@@ -23,7 +23,7 @@ $(function () {
   $(document).on("click", "#note-save", function (event) {
     var articleID = $("#note-save").data("id");
     var newNote = {};
-    newNote.title = $("#note-itle").val();
+    newNote.title = $("#note-title").val();
     newNote.body = $("#note-body").val();
 
     $.post(`/api/note/${articleID}`, newNote, function (data) {

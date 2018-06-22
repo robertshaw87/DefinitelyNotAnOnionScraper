@@ -5,3 +5,34 @@
 #noteBody {
   height: 100px;
 }
+
+html {
+  min-height: 100%;
+}
+
+body {
+  background-image:url("../images/background-tile.jpg");
+  min-height: 100%;
+  background-position: center bottom;
+  background-repeat: repeat;
+  background-blend-mode: overlay;
+  background-color: rgba(245, 245, 245, 1);
+}
+
+.jumbotron {
+  background-color: rgba(233, 236, 239, 1);
+  background-image:url("../images/background.jpg");
+  min-height: 100%;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: overlay;
+  border-bottom-color: rgba(233, 236, 239, 1);
+  border-bottom-width: 8px;
+  border-bottom-style: solid;
+}
+
+.jumbotron img {
+  height: 180px;
+  border-radius: 40px;
+}
