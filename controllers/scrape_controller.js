@@ -36,17 +36,22 @@ router.get("/saved", function (req, res){
 router.get("/api/scrape", function (req, res) {
     request("https://old.reddit.com/r/nottheonion/", function(error, response, html) {
       var $ = cheerio.load(html);
+      var results = [];
       $(".thing").each(function(i, element) {
         var link = $(element).find("a.title").attr("href");
         var title = $(element).find("a.title").text();
         var img = $(element).find("a > img").attr("src") || "/assets/images/placeholder.jpg";
-        db.Article.create({
+        results.push({
           title: title,
           link: link,
           img: img
         });
       });
-      res.redirect("/");
+      db.Article.insertMany(results).then(function (data) {
+        res.redirect("/");
+      }).catch(function (err) {
+        res.redirect("/");
+      })
     });
 });
 

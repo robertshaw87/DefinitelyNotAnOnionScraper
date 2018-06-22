@@ -3,8 +3,8 @@
     <h1 class="display-4">Definitely Not an Onion Scraper</h1>
     <p class="lead">Scrape links to real news articles linked by reddit. Add articles to your favorites to track and add notes.</p>
     <div>
-      <a href="/api/scrape"><button class="btn btn-outline-dark m-3" id="rescrape-button">Rescrape</button></a>
-      <a href="/saved"><button class="btn btn-outline-dark m-3" id="saved-articles-button">Saved Articles</button></a>
+      <a href="/api/scrape"><button class="btn btn-outline-dark m-3" id="rescrape-button"><i class="far fa-newspaper"></i> Rescrape</button></a>
+      <a href="/saved"><button class="btn btn-outline-dark m-3" id="saved-articles-button">Saved Articles <i class="fas fa-heart favorite" style="color:red"></i></button></a>
     </div>
   </div>
 </div>
@@ -17,17 +17,33 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="noteModalLongTitle"></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+              <label for="noteModalLongTitle">
+                <h5 class="modal-title"><i class="far fa-sticky-note"></i> Note</h5>
+              </label>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
-            <div class="modal-body text-center">
-                ...
+            <div class="modal-body">
+              <form role="form">
+                <div class="form-group">
+                  <label for="note-title">
+                    <h6>Title</h6>
+                  </label>
+                  <input type="text" class="form-control" id="note-title">
+                </div>
+
+                <div class="form-group">
+                  <label for="note-body">
+                    <h6>Body</h6>
+                  </label>
+                  <textarea type="text" class="form-control" id="note-body"></textarea>
+                </div>
+              </form>
             </div>
             <div class="modal-footer">
                 {{!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> --}}
-                <button type="button" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="note-save">Save</button>
             </div>
         </div>
     </div>
