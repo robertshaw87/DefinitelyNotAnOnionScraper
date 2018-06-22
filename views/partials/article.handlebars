@@ -2,11 +2,11 @@
   <div class="card-body">
     <div class="row">
       <div class="col">
-        <button class="btn btn-outline-dark float-right ml-3" data-id="{{_id}}">
+        <button class="btn btn-outline-dark float-right ml-3 save-toggle" data-id="{{_id}}" data-node-id="{{note._id}}" data-saved={{saved}}>
           {{#if saved}}
-            <i class="fas fa-heart" style="color:red"></i>
+            <i class="fas fa-heart favorite" style="color:red"></i>
           {{else}}
-            <i class="far fa-heart"></i>
+            <i class="far fa-heart favorite"></i>
           {{/if}}
         </button>
         {{#if saved}}

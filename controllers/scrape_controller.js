@@ -48,7 +48,7 @@ router.get("/api/scrape", function (req, res) {
     });
 });
 
-router.post("api/save/:id", function (req, res) {
+router.post("/api/save/:id", function (req, res) {
   db.Article.findOneAndUpdate(
     {_id: req.params.id}, 
     {$set : {saved: req.body.saved}}, 
@@ -57,7 +57,7 @@ router.post("api/save/:id", function (req, res) {
     });
 });
 
-router.post("api/note/:id", function (req, res) {
+router.post("/api/note/:id", function (req, res) {
   var newNote = {
     title: req.body.title,
     body: req.body.body
@@ -66,7 +66,7 @@ router.post("api/note/:id", function (req, res) {
     {_id: req.params.id},
     newNote
   ).then(function(data) {
-    res.end();
+    res.json(data);
   }).catch(function(err) {
     res.json(err);
   })
