@@ -1,5 +1,5 @@
 # DefinitelyNotAnOnionScraper
-[Definitely Not An Onion Scraper](https://dashboard.heroku.com/apps/not-an-onion-scraper)
+[Definitely Not An Onion Scraper](https://not-an-onion-scraper.herokuapp.com/)
 
 Scrapes and saves news articles from reddit. You can mark them as favorites and even leave notes.
 
